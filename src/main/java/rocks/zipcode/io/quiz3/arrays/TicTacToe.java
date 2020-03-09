@@ -19,6 +19,7 @@ public class TicTacToe {
     String botMid;
     String botRight;
 
+
     public TicTacToe(String[][] board) {
         this.board = board;
 
@@ -54,11 +55,13 @@ public class TicTacToe {
     }
 
     public Boolean isRowHomogenous(Integer rowIndex) {
-        return null;
+        String[] row = getRow(rowIndex);
+        return row[0].equals(row[1]) || row[1].equals(row[2]);
     }
 
     public Boolean isColumnHomogeneous(Integer columnIndex) {
-        return null;
+        String[] column = getColumn(columnIndex);
+        return column[0].equals(column[1]) || column[1].equals(column[2]);
     }
 
     public String getWinner() {
