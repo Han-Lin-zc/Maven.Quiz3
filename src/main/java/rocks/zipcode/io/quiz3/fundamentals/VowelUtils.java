@@ -7,7 +7,7 @@ public class VowelUtils {
     public static Boolean hasVowels(String word) {
 
         for (int i = 0; i < word.length(); i++) {
-            char ch = word.charAt(i);
+            char ch = word.toLowerCase().charAt(i);
             if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch =='u'){
                 return true;
             }
@@ -16,7 +16,7 @@ public class VowelUtils {
     }
 
     public static Integer getIndexOfFirstVowel(String word) {
-        String vowels = "aeiou";
+        String vowels = "aeiouAEIOU";
         for (int i = 0; i < word.length(); i++) {
             if (hasVowels(word)){
                 if (vowels.contains(String.valueOf(word.charAt(i)))) return i;
@@ -35,6 +35,9 @@ public class VowelUtils {
         if (Character.isUpperCase(character)) {
             char ch = Character.toLowerCase(character);
             return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u';
+        } else if (Character.isLowerCase(character)) {
+            return character == 'a' || character == 'e' || character == 'i' ||
+                    character == 'o' || character == 'u';
         }
         return false;
     }

@@ -5,23 +5,22 @@ package rocks.zipcode.io.quiz3.objectorientation.enums;
  */
 public enum RockPaperScissorHandSign {
 
-    SIGN,
     ROCK,
     PAPER,
     SCISSOR;
 
 
     public RockPaperScissorHandSign getLoser() {
-        if (ROCK == RockPaperScissorHandSign.valueOf("ROCK")) return SCISSOR;
-        if (PAPER == RockPaperScissorHandSign.valueOf("PAPER")) return ROCK;
-        if (SCISSOR == RockPaperScissorHandSign.valueOf("SCISSOR")) return PAPER;
+        if (this.equals(RockPaperScissorHandSign.ROCK)) return SCISSOR;
+        if (this.equals(RockPaperScissorHandSign.PAPER)) return ROCK;
+        if (this.equals(RockPaperScissorHandSign.SCISSOR)) return PAPER;
         return null;
     }
 
     public RockPaperScissorHandSign getWinner() {
-        if (ROCK == RockPaperScissorHandSign.valueOf("ROCK")) return PAPER;
-        if (PAPER == RockPaperScissorHandSign.valueOf("PAPER")) return SCISSOR;
-        if (SCISSOR == RockPaperScissorHandSign.valueOf("SCISSOR")) return ROCK;
+        if (this.equals(RockPaperScissorHandSign.ROCK)) return PAPER;
+        if (this.equals(RockPaperScissorHandSign.PAPER)) return SCISSOR;
+        if (this.equals(RockPaperScissorHandSign.SCISSOR)) return ROCK;
         return null;
     }
 

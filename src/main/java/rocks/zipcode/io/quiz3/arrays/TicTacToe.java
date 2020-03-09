@@ -65,6 +65,8 @@ public class TicTacToe {
     }
 
     public String getWinner() {
+        String[][] newBoard = getBoard();
+
         return null;
     }
 
