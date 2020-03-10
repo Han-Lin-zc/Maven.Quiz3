@@ -64,15 +64,53 @@ public class TicTacToe {
         return column[0].equals(column[1]) || column[1].equals(column[2]);
     }
 
-    public String getWinner() {
-        String[][] newBoard = getBoard();
-
-        return null;
-    }
 
     public String[][] getBoard() {
         return this.board;
     }
 
+
+    public Boolean isInFavorOfX() {
+        if (topLeft.equals("X") && topLeft.equals(topMid) && topMid.equals(topRight) ||
+                midLeft.equals("X") && midLeft.equals(midMid) && midMid.equals(midRight) ||
+                botLeft.equals("X") && botLeft.equals(botMid) && botMid.equals(botRight) ||
+                topLeft.equals("X") && topLeft.equals(midLeft) && midLeft.equals(botLeft) ||
+                topMid.equals("X") && topMid.equals(midMid) && midMid.equals(botMid) ||
+                topRight.equals("X") && topRight.equals(midRight) && midRight.equals(botRight) ||
+                topLeft.equals("X") && topLeft.equals(midMid) && midMid.equals(botRight) ||
+                topRight.equals("X") && topRight.equals(midMid) && midMid.equals(botLeft)) {
+            return true;
+        }
+        return false;
+    }
+
+
+    public Boolean isInFavorOfO() {
+        if (topLeft.equals("O") && topLeft.equals(topMid) && topMid.equals(topRight) ||
+                midLeft.equals("O") && midLeft.equals(midMid) && midMid.equals(midRight) ||
+                botLeft.equals("O") && botLeft.equals(botMid) && botMid.equals(botRight) ||
+                topLeft.equals("O") && topLeft.equals(midLeft) && midLeft.equals(botLeft) ||
+                topMid.equals("O") && topMid.equals(midMid) && midMid.equals(botMid) ||
+                topRight.equals("O") && topRight.equals(midRight) && midRight.equals(botRight) ||
+                topLeft.equals("O") && topLeft.equals(midMid) && midMid.equals(botRight) ||
+                topRight.equals("O") && topRight.equals(midMid) && midMid.equals(botLeft)) {
+            return true;
+        }
+        return false;
+    }
+
+
+    public String getWinner() {
+        String winnerX = "X";
+        String winnerO = "O";
+        String isDraw = "";
+
+        if (isInFavorOfX()) {
+            return winnerX;
+        } else if (isInFavorOfO()) {
+            return winnerO;
+        }
+        return isDraw;
+    }
 
 }
